@@ -1,0 +1,7 @@
+node_modules/
+lib/
+coverage/
+ios/CardSecureViewKit/.build/
+ios/CardSecureViewKit/.swiftpm/
+*.tgz
+.DS_Store
