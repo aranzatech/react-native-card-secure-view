@@ -1,6 +1,14 @@
 #import "RCTNativeCardSecureView.h"
 
+// Static-lib linkage generates the Swift interop header alongside this file
+// (quoted import); use_frameworks! linkage nests it inside the compiled
+// framework's public headers instead (angle-bracket import). Support both
+// so consumers can choose either CocoaPods linkage mode.
+#if __has_include(<ReactNativeCardSecureView/ReactNativeCardSecureView-Swift.h>)
+#import <ReactNativeCardSecureView/ReactNativeCardSecureView-Swift.h>
+#else
 #import "ReactNativeCardSecureView-Swift.h"
+#endif
 
 @implementation RCTNativeCardSecureView {
   NativeCardSecureViewAdapter *_adapter;
