@@ -1,6 +1,6 @@
 {
   "name": "@aranzatech/react-native-card-secure-view",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vista segura nativa iOS para datos sensibles de tarjetas — TurboModule con validación HMAC, protección anti-captura y timeout de sesión",
   "license": "MIT",
   "author": "AranzaTech",

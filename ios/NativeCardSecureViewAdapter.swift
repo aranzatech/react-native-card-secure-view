@@ -1,4 +1,3 @@
-import CardSecureViewKit
 import UIKit
 
 private final class NativeSecureViewEventSink: @unchecked Sendable {
@@ -37,19 +36,23 @@ private final class NativeSecureViewEventSink: @unchecked Sendable {
 
 @MainActor
 @objc(NativeCardSecureViewAdapter)
-final class NativeCardSecureViewAdapter: NSObject {
+public final class NativeCardSecureViewAdapter: NSObject {
     private let coordinator = CardSecureViewCoordinator(
         configuration: CardSecureViewConfiguration(sessionTimeout: 45)
     )
     private let tokenIssuer = DemoSecureTokenIssuer()
 
+    @objc public override init() {
+        super.init()
+    }
+
     @objc(createSecureTokenForCardId:)
-    func createSecureToken(forCardId cardId: String) -> String? {
+    public func createSecureToken(forCardId cardId: String) -> String? {
         tokenIssuer.issueToken(for: cardId, validFor: 60)
     }
 
     @objc(openSecureViewWithCardId:secureToken:eventHandler:completion:)
-    func openSecureView(
+    public func openSecureView(
         cardId: String,
         secureToken: String,
         eventHandler: @escaping ([String: String]) -> Void,

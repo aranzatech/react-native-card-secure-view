@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
 
   s.source_files = "ios/*.{h,mm,swift}",
                    "ios/CardSecureViewKit/Sources/**/*.swift"
+  s.private_header_files = "ios/*.h"
   s.swift_version = "5.9"
   s.pod_target_xcconfig = { "DEFINES_MODULE" => "YES" }
 

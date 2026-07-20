@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Corrige el build iOS al consumir el pod: los headers ObjC++ ahora son privados (`private_header_files`), evitando que el spec C++ de Codegen entre al module map y rompa la compilación del módulo Swift (`'utility' file not found`).
+
 ## 0.1.0
 
 - Extracción inicial de la librería desde la app del reto Card Secure View.
